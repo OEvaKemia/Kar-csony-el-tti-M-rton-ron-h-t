@@ -1,0 +1,6 @@
+{
+  "name": "Christmas Code 2126 - Az öt pecsét titka",
+  "description": "Magyar nyelvű, interaktív 3D-s karácsonyi kémiai szabadulószoba-játék a Márton Áron Főgimnázium diákjainak.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

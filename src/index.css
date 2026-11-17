@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-[#040712] text-slate-100 antialiased overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Orbitron', 'Chakra Petch', monospace, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-mono-tech {
+    font-family: 'Chakra Petch', monospace, monospace;
+  }
+}
+
+/* Custom sci-fi glow and panel utilities (no backdrop-blur over WebGL) */
+.neon-glow-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.75), 0 0 28px rgba(6, 182, 212, 0.35);
+}
+
+.neon-glow-gold {
+  text-shadow: 0 0 12px rgba(234, 179, 8, 0.75), 0 0 28px rgba(234, 179, 8, 0.35);
+}
+
+.neon-glow-crimson {
+  text-shadow: 0 0 12px rgba(244, 63, 94, 0.75), 0 0 28px rgba(244, 63, 94, 0.35);
+}
+
+.neon-box-cyan {
+  box-shadow: 0 0 24px -6px rgba(6, 182, 212, 0.38), inset 0 0 18px -4px rgba(6, 182, 212, 0.14);
+}
+
+.neon-box-gold {
+  box-shadow: 0 0 24px -6px rgba(234, 179, 8, 0.42), inset 0 0 18px -4px rgba(234, 179, 8, 0.16);
+}
+
+.neon-box-violet {
+  box-shadow: 0 0 24px -6px rgba(168, 85, 247, 0.42), inset 0 0 18px -4px rgba(168, 85, 247, 0.16);
+}
+
+.neon-box-crimson {
+  box-shadow: 0 0 24px -6px rgba(244, 63, 94, 0.42), inset 0 0 18px -4px rgba(244, 63, 94, 0.16);
+}
+
+.cyber-panel {
+  background: linear-gradient(155deg, rgba(10, 15, 34, 0.92), rgba(18, 12, 38, 0.9));
+  border: 1px solid rgba(34, 211, 238, 0.25);
+}
+
+.scanline {
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0, 0, 0, 0.24) 50%, rgba(0, 0, 0, 0.24));
+  background-size: 100% 4px;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-story-line {
+  animation: fadeSlideUp 0.55s ease-out forwards;
+}
+
+@keyframes holoMaterialize {
+  0% {
+    opacity: 0;
+    transform: scale(0.86) translateY(14px);
+    filter: brightness(1.8) blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-2px);
+    filter: brightness(1.25) blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: brightness(1) blur(0);
+  }
+}
+
+@keyframes holoScanSweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(250%);
+  }
+}
+
+@keyframes holoSpinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-holo-reveal {
+  animation: holoMaterialize 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-holo-scan {
+  animation: holoScanSweep 2.4s linear infinite;
+}
+
+.animate-holo-spin {
+  animation: holoSpinSlow 14s linear infinite;
+}
+
+/* Full-screen snowy Márton Áron Főgimnázium backdrop (responsive positioning) */
+.finale-school-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 20%;
+}
+
+@media (min-width: 768px) {
+  .finale-school-bg {
+    background-position: center 26%;
+  }
+}
+
+@keyframes finaleSchoolReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.045);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-finale-school {
+  animation: finaleSchoolReveal 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.65);
+}
